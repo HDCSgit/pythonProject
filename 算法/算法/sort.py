@@ -165,3 +165,4 @@ quick_sort(li4)
 topk_sort(li5)
 merge_sort(li6)
 print('1')
+手打

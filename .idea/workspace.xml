@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="eadacac3-b476-4138-91b6-6822356231b2" name="Changes" comment="Changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/算法/算法/sort.py" beforeDir="false" afterPath="$PROJECT_DIR$/算法/算法/sort.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +36,7 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
   <component name="RunManager" selected="Python.sort">
     <configuration name="cal_time" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -131,7 +130,7 @@
       <workItem from="1650971840970" duration="837000" />
       <workItem from="1650972703646" duration="3973000" />
       <workItem from="1651022300058" duration="134000" />
-      <workItem from="1651022461055" duration="4504000" />
+      <workItem from="1651022461055" duration="4843000" />
     </task>
     <task id="LOCAL-00001" summary="Changes">
       <created>1651022576351</created>
@@ -154,7 +153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651024083408</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Changes">
+      <created>1651028240960</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1651028240960</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

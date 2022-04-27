@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eadacac3-b476-4138-91b6-6822356231b2" name="Changes" comment="Changes" />
+    <list default="true" id="eadacac3-b476-4138-91b6-6822356231b2" name="Changes" comment="Changes">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/算法/算法/sort.py" beforeDir="false" afterPath="$PROJECT_DIR$/算法/算法/sort.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +16,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="SWAP_SIDES_IN_COMPARE_BRANCHES" value="true" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="c72fc4c5-a27c-418e-a6de-6857085c94e1" />
+        <option name="url" value="https://github.com/HDCSgit/pythonProject.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/算法/算法/sort.py" root0="FORCE_HIGHLIGHTING" />
@@ -129,7 +140,7 @@
       <workItem from="1650971840970" duration="837000" />
       <workItem from="1650972703646" duration="3973000" />
       <workItem from="1651022300058" duration="134000" />
-      <workItem from="1651022461055" duration="6146000" />
+      <workItem from="1651022461055" duration="6464000" />
     </task>
     <task id="LOCAL-00001" summary="Changes">
       <created>1651022576351</created>
@@ -180,7 +191,21 @@
       <option name="project" value="LOCAL" />
       <updated>1651029518536</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Changes">
+      <created>1651029808238</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1651029808238</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Changes">
+      <created>1651029979069</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1651029979069</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,6 +237,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Changes" />
     <option name="LAST_COMMIT_MESSAGE" value="Changes" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

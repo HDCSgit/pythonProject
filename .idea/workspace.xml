@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eadacac3-b476-4138-91b6-6822356231b2" name="Changes" comment="Changes" />
+    <list default="true" id="eadacac3-b476-4138-91b6-6822356231b2" name="Changes" comment="Changes">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/算法/算法/sort.py" beforeDir="false" afterPath="$PROJECT_DIR$/算法/算法/sort.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -137,7 +140,9 @@
       <workItem from="1650971840970" duration="837000" />
       <workItem from="1650972703646" duration="3973000" />
       <workItem from="1651022300058" duration="134000" />
-      <workItem from="1651022461055" duration="7234000" />
+      <workItem from="1651022461055" duration="8255000" />
+      <workItem from="1651736255773" duration="907000" />
+      <workItem from="1651739423379" duration="132000" />
     </task>
     <task id="LOCAL-00001" summary="Changes">
       <created>1651022576351</created>
@@ -209,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651030145426</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Changes">
+      <created>1651031641938</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1651031641938</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -5,13 +5,26 @@ from email.mime.text import MIMEText
 from email.header import Header
 import xlrd
 
+# 读取excel.xls的行内容列表
 def email_address():
+    elist=[]
     work_book = xlrd.open_workbook('email.xls')
-    sheets = work_book.sheets()
     sheet1 = work_book.sheet_by_name('Sheet1')
-    cellVallues = sheet1.col_slice(0)
+    cellVallues = sheet1.get_rows()
+    for cellVallue in cellVallues:
+        for cell in cellVallue:
+            if cell.value != 'email':
+                elist.append(cell.value)
+    return elist
 
-print(cellVallues)
+# 邮箱字符串
+def email_address_str(num):
+    elist = email_address()
+    email = ''.join(elist[num])
+    return email
+
+
+
 """
 
 from_addr='121044473@qq.com'   #邮件发送账号

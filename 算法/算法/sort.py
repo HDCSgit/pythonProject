@@ -148,6 +148,9 @@ def merge_sort(li):
 
 
 
+
+
+
 li = list(range(10000))
 random.shuffle(li)
 

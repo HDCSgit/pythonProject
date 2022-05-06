@@ -23,32 +23,35 @@ def email_address_str(num):
     email = ''.join(elist[num])
     return email
 
+# 多次发送邮件
+def send_email():
+    for i in range(len(email_address())):
+        email(i)
 
+def email(num):
+    from_addr = '121044473@qq.com'  # 邮件发送账号
+    to_addrs = email_address_str(num) # 邮件收到的账号
+    qqCode='dzowlvlyqbjmbgid'   #授权码（这个要填自己获取到的）
+    smtp_server = 'smtp.qq.com' #固定写死
+    smtp_port = 465 #固定端口
 
-"""
+    #配置服务器
+    stmp=smtplib.SMTP_SSL(smtp_server,smtp_port)
+    stmp.login(from_addr,qqCode)
 
-from_addr='121044473@qq.com'   #邮件发送账号
-to_addrs='1244716205@qq.com'   #接收邮件账号
-qqCode='dzowlvlyqbjmbgid'   #授权码（这个要填自己获取到的）
-smtp_server='smtp.qq.com'#固定写死
-smtp_port=465#固定端口
+    #组装发送内容
+    message = MIMEText('我是发送的内容', 'plain', 'utf-8')   #发送的内容
+    message['From'] = Header("Python邮件预警系统", 'utf-8')   #发件人
+    message['To'] = Header("管理员", 'utf-8')   #收件人
+    subject = 'Python SMTP 邮件测试'
+    message['Subject'] = Header(subject, 'utf-8')  #邮件标题
 
+    #发送且返回结果
+    try:
+        stmp.sendmail(from_addr, to_addrs, message.as_string())
+    except Exception as e:
+        print ('邮件发送失败--' + str(e))
 
-#配置服务器
-stmp=smtplib.SMTP_SSL(smtp_server,smtp_port)
-stmp.login(from_addr,qqCode)
+    print ('邮件发送成功')
 
-#组装发送内容
-message = MIMEText('我是发送的内容', 'plain', 'utf-8')   #发送的内容
-message['From'] = Header("Python邮件预警系统", 'utf-8')   #发件人
-message['To'] = Header("管理员", 'utf-8')   #收件人
-subject = 'Python SMTP 邮件测试'
-message['Subject'] = Header(subject, 'utf-8')  #邮件标题
-
-try:
-    stmp.sendmail(from_addr, to_addrs, message.as_string())
-except Exception as e:
-    print ('邮件发送失败--' + str(e))
-
-print ('邮件发送成功')
-"""
+send_email()

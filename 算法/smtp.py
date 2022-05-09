@@ -16,6 +16,7 @@ def email_address():
             if cell.value != 'email':
                 elist.append(cell.value)
     return elist
+    
 
 # 邮箱字符串
 def email_address_str(num):

@@ -1,12 +1,16 @@
+# -*-coding:utf-8-*-
+
 from appium import webdriver
 from appium.webdriver.extensions.android.nativekey import AndroidKey
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common import by
+import time
 
 # 如果需要清空缓存,删除“noReset”: "true"
 desired_caps = {
     "platformName": "Android",
-    "platformVersion": "10.0",
-    "deviceName": "6QDDU19702033073",
+    "platformVersion": "9",
+    "deviceName": "BLA-AL00",
     "appPackage": "com.haixiaep",
     "appActivity": "com.sinosun.tchats.WiWelcomeActivity",
     "noReset": "true"
@@ -16,18 +20,17 @@ desired_caps = {
 
 driver = webdriver.Remote('http://localhost:4723/wd/hub',desired_caps)
 
-print('ok')
 
 # 设置缺省等待时间
-driver.implicitly_wait(10)
+driver.implicitly_wait(15)
 
-"""
+
 
 # 隐私政策确定
 privacy = driver.find_element(By.ID,'com.haixiaep:id/html_agree')
 if privacy:
     privacy.click()
-
+time.sleep(3)
 # 是否允许访问媒体文件
 accessMedia = driver.find_element(By.ID,'com.android.permissioncontroller:id/permission_allow_button')
 if accessMedia:
@@ -46,33 +49,36 @@ if neverKnow:
 iknow = driver.find_element(By.ID,'com.haixiaep:id/negative_bt')
 if iknow:
     iknow.click()
-"""
-
-mylogging = driver.find_element(By.ID,'com.haixiaep:id/fifthicon')
-menu = driver.find_element(By.ID,'com.haixiaep:id/menu_fifth')
-otherLoggings = driver.find_elements(AppiumBy.CLASS_NAME,'android.widget.TextView')
-passwordLoging = driver.find_elements(AppiumBy.CLASS_NAME,'android.widget.TextView[1]')
-phoneNumber = driver.find_element(By.ID,'phone1')
-phonePassword = driver.find_element(By.ID,'passwordView')
-loggingAgreement = driver.find_elements(By.XPATH,'/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.widget.FrameLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[5]')
-loggingCommit = driver.find_elements(By.XPATH,'/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.widget.FrameLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[7]/android.widget.TextView')
 
 
-try:
-    if mylogging:
-        mylogging.click()
-    if otherLoggings:
-        otherLoggings.click()
-    if passwordLoging:
-        passwordLoging.click()
-    if phoneNumber:
-        phoneNumber.send_keys('13695112111')
-    if phonePassword:
-        phonePassword.send_keys('Zxcvbn12')
-    if loggingAgreement:
-        loggingAgreement.click()
-    if loggingCommit:
-        loggingCommit.click()
-except:
-    pass
+mylogging = driver.find_element(By.ID,"com.haixiaep:id/fifthicon")
+otherLoggings = driver.find_element(By.XPATH,"//android.view.View[@text='其他方式登录']")
+passwordLogging = driver.find_element(By.XPATH,"//android.view.View[@text='密码登录']")
+phoneNumberDelete = driver.find_element(By.XPATH,"//android.view.View[1][@index='1']")
+phoneNumber = driver.find_element(By.XPATH,"//android.widget.EditText[@index='0']")
+phonePassword = driver.find_element(By.XPATH,"//android.view.View[@resource-id='passwordView']")
+loggingAgreement = driver.find_element(By.XPATH,"//android.view.View[@index='7']")
+loggingCommit = driver.find_element(By.XPATH,"//android.widget.TextView[@text='登录']")
+
+
+print('ok')
+#操作
+if mylogging:
+    mylogging.click()
+
+otherLoggings.click()
+passwordLogging.click()
+phoneNumberDelete.click()
+phoneNumber.send_keys('13695112111')
+password = 'Zxcvbn12'
+for i in password:
+    if phonePassword.get(i):
+        phonePassword.press_keycode(phonePassword[i])
+    else:
+        phonePassword.press_keycode(phonePassword[i.lower()],64,59)
+
+loggingAgreement.click()
+loggingCommit.click()
+
+
 

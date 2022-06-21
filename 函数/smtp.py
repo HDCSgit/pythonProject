@@ -8,7 +8,7 @@ import xlrd
 # 读取excel.xls的行内容列表
 def email_address():
     elist=[]
-    work_book = xlrd.open_workbook('email.xls')
+    work_book = xlrd.open_workbook('D:\Project\pythonProject\函数\email.xls')
     sheet1 = work_book.sheet_by_name('Sheet1')
     cellVallues = sheet1.get_rows()
     for cellVallue in cellVallues:

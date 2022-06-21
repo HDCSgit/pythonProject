@@ -103,8 +103,7 @@ def topk_sort(li):
     topk(li,len(li))
 
 
-#归并排序
-
+#归并排序 时间复杂度O(nlogn) 空间复杂度O(n)
 def merge(li, low, mid, high):
     i = low
     j = mid + 1
@@ -141,13 +140,66 @@ def merge_sort(li):
         pass
 
 
+def insert_sort_gap(li,gap):
+    for i in range(gap, len(li)):
+        tmp = li[i]
+        j = i - gap
+        while j >= 0 and tmp < li[j]:
+            li[j + gap] = li[j]
+            j -= gap
+        li[j + gap] = tmp
 
 
 
+@cal_time
+def shell_sort(li):
+    d = len(li)//2
+    while d >= 1:
+        insert_sort_gap(li,d)
+        d = d//2
 
 
+@cal_time
+def _shell_sort(list):
+    n =len(list)
+    gap = n//2
+    while gap > 0:
+        for i in range(gap,n):
+            temp = list[i]
+            j = i 
+            while j >= 0 and j-gap >= 0 and list[j-gap] > temp:
+                list[j] = list[j - gap]
+                j -= gap
+            list[j] = temp
+        gap = gap//2
+    return list
 
+@cal_time
+def count_sort(li, max_count=10000):
+    count = [0 for _ in range(max_count+1)]
+    for val in li:
+        count[val] += 1
+    li.clear()
+    for ind, val in enumerate(count):
+        for _ in range(val):
+            li.append(ind)
 
+@cal_time
+def sort_test(li):
+    return sorted(li)
+
+@cal_time
+def bucket_sort(li):
+    max_val = max(li)
+    min_val = min(li)
+    bucket_size = (max_val - min_val) // len(li) + 1
+    bucket = [[] for _ in range(len(li))]
+    for val in li:
+        bucket[(val - min_val) // bucket_size].append(val)
+    li.clear()
+    for b in bucket:
+        li.extend(b)
+    return li
 
 
 
@@ -160,6 +212,10 @@ li3=copy.deepcopy(li)
 li4=copy.deepcopy(li)
 li5=copy.deepcopy(li)
 li6=copy.deepcopy(li)
+li7=copy.deepcopy(li)
+li8=copy.deepcopy(li)
+li9=copy.deepcopy(li)
+li10=copy.deepcopy(li)
 
 bubble_sort(li1)
 insert_sort(li2)
@@ -167,3 +223,7 @@ select_sort(li3)
 quick_sort(li4)
 topk_sort(li5)
 merge_sort(li6)
+shell_sort(li7)
+sort_test(li8)
+count_sort(li9)
+bucket_sort(li10)
